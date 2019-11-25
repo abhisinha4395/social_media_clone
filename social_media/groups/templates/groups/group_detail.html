@@ -6,12 +6,17 @@
 
 <div class="content">
     {% if user in group.members.all %}
-        <a href="{url 'group:leave' slug=group.slug}" class="btn btn-lg btn-fill btn-warning">
-            <i class="material-icons">exit_to_app</i>
+        <a href="{% url 'groups:leave' slug=group.slug %}" class="btn btn-lg btn-fill btn-warning">
+            <span>
+                <i class="material-icons">exit_to_app</i>Exit Group
+            </span>
+
         </a>
     {% else %}
-        <a href="{url 'group:join' slug=group.slug}" class="btn btn-lg btn-fill btn-default">
-            <i class="material-icons">add_circle_outline</i>
+        <a href="{% url 'groups:join' slug=group.slug %}" class="btn btn-lg btn-fill btn-primary">
+            <span>
+                <i class="material-icons">add_circle_outline</i>Join Group
+            </span>
         </a>
     {% endif %}
 </div>

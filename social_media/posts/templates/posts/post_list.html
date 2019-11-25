@@ -22,7 +22,7 @@
             <ul class="list-unstyled">
                 {% for other_group in get_other_groups %}
                 <li>
-                    <a href="{% url 'groups:single' slug-other_group.slug %}" class="card-link"></a>
+                    <a href="{% url 'groups:single' slug=other_group.slug %}" class="card-link"></a>
                 </li>
 
                 {% endfor %}
@@ -34,7 +34,7 @@
 {% endblock %}
 
 {% block post_content %}
-<div class="col-md-8">
+<div class="col-md-8" style="display:inherit;">
     {% for post in post_list %}
         {% include "posts/_post.html" %}
     {% endfor %}
